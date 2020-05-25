@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="big_margin">16dp</dimen>
+    <dimen name="big_big_margin">32dp</dimen>
+    <dimen name="big_big_big_margin">64dp</dimen>
+    <dimen name="titleSplash">45sp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="progress_bar_in_spinner">24dp</dimen>
+</resources>

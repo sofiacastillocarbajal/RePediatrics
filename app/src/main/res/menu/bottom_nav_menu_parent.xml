@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home_parent"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_patients_parent"
+        android:icon="@drawable/ic_people"
+        android:title="Mis Hijos" />
+
+    <item
+        android:id="@+id/navigation_notifications_parent"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notificaciones" />
+
+    <item
+        android:id="@+id/navigation_my_account_parent"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/my_account" />
+
+</menu>

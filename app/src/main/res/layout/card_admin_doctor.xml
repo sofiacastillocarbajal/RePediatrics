@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/doctorCardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_margin"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/patientPictureCardView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="360dp"
+            app:cardElevation="0dp"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/doctorPictureAppCompatImageView"
+                app:srcCompat="@drawable/doctor_male"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/arc_white"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toTopOf="@id/patientPictureCardView"
+            app:layout_constraintStart_toStartOf="@id/patientPictureCardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/arc_green"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/rateTextView"
+                android:text="00%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/votesTextView"
+            android:text="Sin votos"
+            android:textSize="12sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/patientPictureCardView"
+            app:layout_constraintTop_toBottomOf="@id/patientPictureCardView"/>
+
+        <TextView
+            android:id="@+id/commentsTextView"
+            android:text="0 comentarios"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/patientPictureCardView"
+            app:layout_constraintTop_toBottomOf="@id/votesTextView"/>
+
+        <TextView
+            android:id="@+id/fullNameTextView"
+            android:text="Dr. Nombre Generico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            app:layout_constraintStart_toEndOf="@id/patientPictureCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/patientPictureCardView"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/boxConstraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bordered"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/patientPictureCardView"
+            app:layout_constraintTop_toBottomOf="@id/fullNameTextView"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/specialityTextView"
+                android:text="Urologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/ageTextView"
+                android:text="15 años de edad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/specialityTextView"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/personAppCompatImageView"
+            app:srcCompat="@drawable/ic_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/colorAccent"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/patientPictureCardView"
+            app:layout_constraintTop_toBottomOf="@id/boxConstraintLayout"/>
+
+        <TextView
+            android:id="@+id/doctorNumberTextView"
+            android:text="1 Doctor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/personAppCompatImageView"
+            app:layout_constraintTop_toBottomOf="@id/boxConstraintLayout"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/placeAppCompatImageView"
+            app:srcCompat="@drawable/ic_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/colorAccent"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/doctorNumberTextView"
+            app:layout_constraintTop_toBottomOf="@id/boxConstraintLayout"/>
+
+        <TextView
+            android:id="@+id/placeTextView"
+            android:text="Lugar de nacimiento del doc"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="@id/boxConstraintLayout"
+            app:layout_constraintStart_toEndOf="@id/placeAppCompatImageView"
+            app:layout_constraintTop_toBottomOf="@id/boxConstraintLayout"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/selectConstraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bordered_blue"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/placeAppCompatImageView"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/confirmConstraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/confirmTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalles"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/seePerfilTextView"
+            android:text="Ver Perfil"
+            android:textColor="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/selectConstraintLayout"
+            app:layout_constraintBottom_toBottomOf="@id/selectConstraintLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

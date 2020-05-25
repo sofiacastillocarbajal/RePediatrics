@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AdvicesActivity">
+
+    <View
+        android:id="@+id/topRoundView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/arc"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backImageButton"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_arrow_back"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/repediatricsTitleTextView"
+        android:text="Consejos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/big_margin"
+        app:layout_constraintStart_toEndOf="@id/backImageButton"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topRoundView"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/titleOneTextView"
+                android:text="¿Qué entendemos por cáncer?"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/paraphOneTextView"
+                android:text="El cáncer es una enfermedad que se puede originar en cualquier parte del cuerpo. Comienza cuando las células crecen descontroladamente sobrepasando a las células normales, lo cual dificulta que el cuerpo funcione de manera adecuada.\n\nPara muchas personas diagnosticadas el cáncer puede tratarse eficazmente. Actualmente hay un mayor número de personas que tienen una vida plena después de haber recibido su tratamiento.\n\nLas personas diagnosticadas, a menudo se preguntan: “¿Qué hice mal?” o “¿Por qué a mí?” sumado a sensaciones de duda, frustración o temor. Los médicos no pueden determinar con certeza las causas del cáncer, pero queremos recordarle que no está solo (a), que organizaciones como la Fundación Colombiana de Leucemia y Linfoma existen para apoyarlo."
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleOneTextView"/>
+
+            <TextView
+                android:id="@+id/titleTwoTextView"
+                android:text="¿Qué características se han descubierto del cáncer?"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/big_big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paraphOneTextView"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/paraphTwoTextView"
+                android:text="• Muchos tipos de cáncer tienen cura, si se diagnostican a tiempo y si se tratan oportunamente.
+                \n• La propagación de las células de cáncer se denomina metástasis.
+                \n• Algunos tipos de cáncer crecen y se propagan rápidamente mientras que otros crecen lentamente (agudo es crecimiento rápido y crónico lento).
+                \n• Saber el tipo de cáncer que tiene es el primer paso para saber el tipo de tratamiento más adecuado.
+                \n• Las personas con cáncer necesitan un tratamiento específico que sea eficaz para el tipo de cáncer, ya sea cirugía, medicamentos (quimioterapia), radioterapia, entre otros. A menudo se administran dos o más tratamientos para obtener los mejores resultados.
+                \n• La mayoría de los tipos de cáncer forman una masa referida como tumor o crecimiento. Sin embargo, no todas las masas (tumores) son cancerosas. Los médicos extraen un fragmento de la masa y la analizan para determinar si es cáncer. Las masas que no son cancerosas se denominan tumores benignos, y las cancerosas se denominan tumores malignos.
+                \n• Hay algunos tipos de cáncer, como la leucemia (cáncer en la sangre) que no forman tumores. Estos tipos de cáncer se desarrollan en los glóbulos (células sanguíneas) o en otras células del cuerpo.
+                \n• El médico también necesita saber si el cáncer se ha propagado y en qué magnitud. Esto se conoce como la clasificación de la etapa del cáncer. Como regla, una etapa menor (como etapa 1 o 2), significa que el cáncer no se ha propagado o no tanto. Un número mayor (como 3 o 4) significa una mayor propagación. La etapa 4 es la mayor. Solo los tipos de cáncer en la sangre no se clasifican en etapas sino en estados de riesgo: estándar, alto o muy alto, o en estadios."
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTwoTextView"/>
+
+            <TextView
+                android:id="@+id/titleThreeTextView"
+                android:text="¿Quisiera conocer algunas recomendaciones para afrontar el cáncer?"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/big_big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paraphTwoTextView"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/paraphThreeTextView"
+                android:text="• Es importante ser muy cumplido y juicioso con el tratamiento.
+                \n• Aumente su cuidado personales e higiene.
+                \n• Procure llevar una alimentación saludable.
+                \n• Es preferible que no esté en lugares en los que haya mucha gente.
+                \n• Hable con sus familiares y amigos sobre su cáncer tan pronto sienta ganas de hacerlo. Tarde o temprano, todos sabrán que usted tiene cáncer. Puede que les lastime o que se sientan excluidos si usted no habla con ellos al respecto.
+                \n• Cuando hable con ellos, explique el tipo de cáncer que tiene y cómo será el tratamiento. Asegúreles que el cáncer no es algo de lo que se pueden contagiar.
+                \n• Permita a su familia y amistades que le ayuden.
+                \n• Hable con las personas con quienes tenga más confianza sobre cómo se siente. Puede que esto no sea fácil, pero puede ser una forma muy importante para obtener apoyo cuando más lo necesita. Si se le dificulta hablar sobre sus sentimientos, encontrar un grupo de apoyo o un profesional de la salud, podría ser de utilidad.
+                \n• Es posible que no pueda hacer cosas que solía hacer antes de que tuviera cáncer (deporte de alto rendimiento, tareas hogareñas, etc). En ese caso, hágalo saber a sus familiares y amigos.
+                \n• Si se siente triste o deprimido(a), hable con su médico, enfermera, u otras personas que puedan ayudarle."
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/big_big_big_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleThreeTextView"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

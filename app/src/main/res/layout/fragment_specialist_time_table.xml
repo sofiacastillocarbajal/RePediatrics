@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SpecialistTimeTableFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hospitalValueCardView"
+        app:cardElevation="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/default_margin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/big_big_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/hospitalValueMaterialSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:ms_arrow_tint="@color/colorPrimary"
+            app:ms_background_color="@android:color/white"
+            app:ms_text_color="@color/colorPrimaryText"  />
+        <ProgressBar
+            android:id="@+id/hospitalValueProgressBar"
+            android:layout_width="@dimen/progress_bar_in_spinner"
+            android:layout_height="@dimen/progress_bar_in_spinner"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarStyleToolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/default_margin"
+            android:visibility="gone"/>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="0dp"
+        android:layout_height="0.8dp"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_margin"
+        android:background="@color/colorDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hospitalValueCardView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/backDayDateCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="360dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/big_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerView">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backDayAppCompatImageView"
+            app:srcCompat="@drawable/ic_back_row"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nextDayDateCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="360dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginEnd="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/big_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerView">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/nextDayAppCompatImageView"
+            app:srcCompat="@drawable/ic_right_arrow"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/dayNameTextView"
+        android:text="0 de ceroembre"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintStart_toEndOf="@id/backDayDateCardView"
+        app:layout_constraintEnd_toStartOf="@id/nextDayDateCardView"
+        app:layout_constraintTop_toTopOf="@id/nextDayDateCardView"
+        app:layout_constraintBottom_toBottomOf="@id/nextDayDateCardView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/timeTableRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:paddingBottom="80dp"
+        android:paddingEnd="@dimen/big_margin"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nextDayDateCardView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messageConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/timeTableRecyclerView"
+        app:layout_constraintEnd_toEndOf="@id/timeTableRecyclerView"
+        app:layout_constraintTop_toTopOf="@id/timeTableRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@id/timeTableRecyclerView"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/messageTextView"
+            android:text="No hay horarios para este día"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

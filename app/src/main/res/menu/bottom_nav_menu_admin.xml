@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_admin_doctors"
+        android:icon="@drawable/ic_doctor"
+        android:title="Médicos" />
+    <item
+        android:id="@+id/navigation_admin_parents"
+        android:icon="@drawable/ic_parent"
+        android:title="Padres" />
+    <item
+        android:id="@+id/navigation_admin_ticket"
+        android:icon="@drawable/ic_ticket"
+        android:title="Tickets" />
+    <item
+        android:id="@+id/navigation_admin_medical_appointments"
+        android:icon="@drawable/ic_local_convenience"
+        android:title="citas" />
+    <item
+        android:id="@+id/navigation_admin_account"
+        android:icon="@drawable/ic_person"
+        android:title="@string/my_account" />
+
+</menu>

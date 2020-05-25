@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ConfirmAppointmentActivity">
+
+    <View
+        android:id="@+id/topRoundView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/arc"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backImageButton"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_arrow_back"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/repediatricsTitleTextView"
+        android:text="Confirmar cita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/big_margin"
+        app:layout_constraintStart_toEndOf="@id/backImageButton"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:theme="@style/ProgressBarStyleWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repediatricsTitleTextView"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/big_big_margin">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/patientPictureCardView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:cardCornerRadius="360dp"
+                app:cardElevation="0dp"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/doctorPictureAppCompatImageView"
+                    app:srcCompat="@drawable/doctor_male"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/fullNameTextView"
+                android:text="Dr. Nombre Generico"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                app:layout_constraintStart_toEndOf="@id/patientPictureCardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/patientPictureCardView"/>
+
+            <TextView
+                android:id="@+id/specialityTextView"
+                android:text="Urologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                app:layout_constraintStart_toEndOf="@id/patientPictureCardView"
+                app:layout_constraintTop_toBottomOf="@id/fullNameTextView"/>
+
+            <View
+                android:id="@+id/dividerView"
+                android:layout_width="0dp"
+                android:layout_height="0.8dp"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patientPictureCardView" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noAppointmentsConstraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerView">
+
+                <TextView
+                    android:id="@+id/dateTitleMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="DIA &amp; HORA"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/dateValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="Mañaneishon, 0 de cero"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dateTitleMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/timeValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="00:00"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dateValueMessageTextView"/>
+
+                <View
+                    android:id="@+id/dividerTwoView"
+                    android:layout_width="0dp"
+                    android:layout_height="0.8dp"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:background="@color/colorDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/timeValueMessageTextView" />
+
+                <TextView
+                    android:id="@+id/patientTitleMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="PACIENTE"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dividerTwoView"/>
+
+                <TextView
+                    android:id="@+id/patientValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="Nombre del paciente aqui"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/patientTitleMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/dniTitleMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="NUMERO DE DOCUMENTO DEL PACIENTE"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/patientValueMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/dniValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="00000000"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dniTitleMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/hospitalTitleMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="HOSPITAL SELECCIONADO"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dniValueMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/hospitalValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="Lalalalala"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hospitalTitleMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/emailTitleMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:text="E-mail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hospitalValueMessageTextView"/>
+
+                <TextView
+                    android:id="@+id/emailValueMessageTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:text="sadsdfs@gmail.com"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emailTitleMessageTextView"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/reserveCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorAccent"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ProgressBar
+                        android:id="@+id/reserveProgressBar"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:indeterminate="true"
+                        android:theme="@style/ProgressBarStyleWhite"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/reserveTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginTop="@dimen/big_margin"
+                        android:layout_marginBottom="@dimen/big_margin"
+                        android:text="Confirmar reserva"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cancelConstraintLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/big_margin"
+                    android:layout_marginEnd="@dimen/big_margin"
+                    android:background="@drawable/button_bordered"
+                    app:layout_constraintBottom_toBottomOf="@id/reserveCardView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/reserveCardView"/>
+
+                <TextView
+                    android:id="@+id/commentActionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintStart_toStartOf="@id/cancelConstraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/reserveCardView"
+                    app:layout_constraintTop_toTopOf="@id/cancelConstraintLayout"
+                    app:layout_constraintBottom_toBottomOf="@id/cancelConstraintLayout"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/topRoundView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/arc"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:theme="@style/ProgressBarStyleWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/repediatricsTitleTextView"
+        android:text="Repediatrics | Apoderado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/medicalDateCardView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="360dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@id/advicesCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topRoundView"
+        app:layout_constraintBottom_toBottomOf="@id/topRoundView">
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/nurse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/big_margin"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/citasTitleTextView"
+        android:text="Citas"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/medicalDateCardView"
+        app:layout_constraintEnd_toEndOf="@id/medicalDateCardView"
+        app:layout_constraintTop_toBottomOf="@id/medicalDateCardView"/>
+
+    <TextView
+        android:id="@+id/citasDescripcionTextView"
+        android:text="Reserva una cita con\nmédico especialista"
+        android:textSize="10sp"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="@id/citasTitleTextView"
+        app:layout_constraintEnd_toEndOf="@id/citasTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/citasTitleTextView"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/advicesCardView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="360dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topRoundView"
+        app:layout_constraintBottom_toBottomOf="@id/topRoundView">
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/pill"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/big_margin"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/consejosTitleTextView"
+        android:text="Consejos"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/advicesCardView"
+        app:layout_constraintEnd_toEndOf="@id/advicesCardView"
+        app:layout_constraintTop_toBottomOf="@id/advicesCardView"/>
+
+    <TextView
+        android:text="Reserva los mejores\nconsejos para tu niño"
+        android:textSize="10sp"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="@id/consejosTitleTextView"
+        app:layout_constraintEnd_toEndOf="@id/consejosTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/consejosTitleTextView"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/requestCardView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="360dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintStart_toEndOf="@id/advicesCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topRoundView"
+        app:layout_constraintBottom_toBottomOf="@id/topRoundView">
+        <androidx.appcompat.widget.AppCompatImageView
+            app:srcCompat="@drawable/microscope"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/big_margin"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/solicitudesTitleTextView"
+        android:text="Solicitudes"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/requestCardView"
+        app:layout_constraintEnd_toEndOf="@id/requestCardView"
+        app:layout_constraintTop_toBottomOf="@id/requestCardView"/>
+
+    <TextView
+        android:text="Estado\nde la referencia"
+        android:textSize="10sp"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="@id/solicitudesTitleTextView"
+        app:layout_constraintEnd_toEndOf="@id/solicitudesTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/solicitudesTitleTextView"/>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintTop_toBottomOf="@id/citasDescripcionTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@android:color/white"
+        android:theme="@style/BottomNavigationTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/speedDialFloatingActionButton"
+        app:srcCompat="@drawable/ic_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        android:layout_margin="@dimen/big_margin"
+        android:tint="@color/colorAccent"
+        app:backgroundTint="@android:color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

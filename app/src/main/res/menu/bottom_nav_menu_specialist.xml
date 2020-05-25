@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home_medical_appointment"
+        android:icon="@drawable/ic_local_convenience"
+        android:title="Mis citas" />
+    <item
+        android:id="@+id/navigation_specialist_tickets"
+        android:icon="@drawable/ic_ticket"
+        android:title="Mis tickets" />
+    <item
+        android:id="@+id/navigation_specialist_timetables"
+        android:icon="@drawable/ic_today"
+        android:title="Horarios" />
+    <item
+        android:id="@+id/navigation_specialist_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notificaciones" />
+    <item
+        android:id="@+id/navigation_my_account_specialist"
+        android:icon="@drawable/ic_person"
+        android:title="@string/my_account" />
+
+</menu>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PatientDetailsActivity">
+
+    <View
+        android:id="@+id/topRoundView"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/arc"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:theme="@style/ProgressBarStyleWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backImageButton"
+        app:layout_constraintBottom_toBottomOf="@id/backImageButton"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backImageButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:tint="@android:color/white"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detailsConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backImageButton"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detailsCardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="@dimen/card_corner_radius">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarFadeDuration="0"
+                android:layout_marginBottom="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_big_margin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/usernameValueTextView"
+                        android:text="Username aqui"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/infanteTitleTextView"
+                        android:text="Infante"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/usernameValueTextView"/>
+
+                    <TextView
+                        android:id="@+id/fullNameTitleTextView"
+                        android:text="NOMBRES Y APELLIDOS"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/infanteTitleTextView" />
+
+                    <TextView
+                        android:id="@+id/fullNameValueTextView"
+                        android:text="Bill Gates Hackeado"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fullNameTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/genderTitleTextView"
+                        android:text="SEXO"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fullNameValueTextView" />
+
+                    <TextView
+                        android:id="@+id/genderValueTextView"
+                        android:text="Masculino"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genderTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/dniTitleTextView"
+                        android:text="DOCUMENTO DE IDENTIDAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/genderValueTextView" />
+
+                    <TextView
+                        android:id="@+id/dniValueTextView"
+                        android:text="00000000 (DNI)"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dniTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/nationalityTitleTextView"
+                        android:text="NACIONALIDAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dniValueTextView" />
+
+                    <TextView
+                        android:id="@+id/nationalityValueTextView"
+                        android:text="marciano"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nationalityTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/birthDateTitleTextView"
+                        android:text="FECHA DE NACIMIENTO"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/nationalityValueTextView" />
+
+                    <TextView
+                        android:id="@+id/birthDateValueTextView"
+                        android:text="00/00/0000 (00 AÑOS)"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/birthDateTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/birthPlaceTitleTextView"
+                        android:text="LUGAR DE NACIMIENTO"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/birthDateValueTextView" />
+
+                    <TextView
+                        android:id="@+id/birthPlaceValueTextView"
+                        android:text="LOREM, IPSUM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/birthPlaceTitleTextView"/>
+
+                    <TextView
+                        android:id="@+id/insuranceTitleTextView"
+                        android:text="TIPO DE ASEGURAMIENTO"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        android:layout_marginTop="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/birthPlaceValueTextView" />
+
+                    <TextView
+                        android:id="@+id/insuranceValueTextView"
+                        android:text="SOS"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="@dimen/big_margin"
+                        android:layout_marginEnd="@dimen/big_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/insuranceTitleTextView"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/doctorPictureCardView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="360dp"
+        app:layout_constraintTop_toTopOf="@id/detailsConstraintLayout"
+        app:layout_constraintBottom_toTopOf="@id/detailsConstraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/doctorPictureAppCompatImageView"
+            app:srcCompat="@drawable/ic_person"
+            android:scaleType="centerCrop"
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

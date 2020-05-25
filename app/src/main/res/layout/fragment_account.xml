@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AccountFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarFadeDuration="0"
+        android:layout_marginBottom="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_margin">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.libizo.CustomEditText
+                android:id="@+id/usernameCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginTop="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="Nombre de usuario (unico)"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:text=""
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:libIZO_setBackgroundColor="@android:color/white"
+                app:libIZO_setBorderColor="@android:color/darker_gray"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+            <com.libizo.CustomEditText
+                android:id="@+id/passwordCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:drawableStart="@drawable/ic_lock"
+                android:hint="@string/password"
+                android:text="********"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usernameCustomEditText"
+                app:libIZO_setBackgroundColor="@android:color/white"
+                app:libIZO_setBorderColor="@android:color/darker_gray"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+            <com.libizo.CustomEditText
+                android:id="@+id/nameCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="Nombre"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:text=""
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordCustomEditText"
+                app:libIZO_setBackgroundColor="@android:color/white"
+                app:libIZO_setBorderColor="@android:color/darker_gray"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+            <com.libizo.CustomEditText
+                android:id="@+id/lastNameCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="Apellidos"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:text=""
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameCustomEditText"
+                app:libIZO_setBackgroundColor="@android:color/white"
+                app:libIZO_setBorderColor="@android:color/darker_gray"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+            <com.libizo.CustomEditText
+                android:id="@+id/emailCustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:layout_marginBottom="@dimen/big_margin"
+                android:drawableStart="@drawable/ic_email"
+                android:hint="Email"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:text=""
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastNameCustomEditText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:libIZO_setBackgroundColor="@android:color/white"
+                app:libIZO_setBorderColor="@android:color/darker_gray"
+                app:libIZO_setBorderView="true"
+                app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logOutCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginBottom="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorAccent"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ProgressBar
+            android:id="@+id/reserveProgressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarStyleWhite"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/reserveTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            android:text="Cerrar sesión"
+            android:textColor="@android:color/white" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

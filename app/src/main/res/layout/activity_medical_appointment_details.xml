@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MedicalAppointmentDetailsActivity">
+
+    <View
+        android:id="@+id/topRoundView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/arc"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backImageButton"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_arrow_back"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/repediatricsTitleTextView"
+        android:text="Detalle de cita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/big_margin"
+        app:layout_constraintStart_toEndOf="@id/backImageButton"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminate="true"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:theme="@style/ProgressBarStyleWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/repediatricsTitleTextView"
+        app:layout_constraintBottom_toBottomOf="@id/repediatricsTitleTextView"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repediatricsTitleTextView"
+        android:layout_marginStart="@dimen/big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/big_big_margin">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/titleNameTextView"
+                android:text="Cita medica"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:layout_marginTop="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/stateTextView"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/stateTextView"
+                android:text="Estado: estado"
+                android:textSize="12sp"
+                android:textColor="@color/colorTertiaryText"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/big_big_margin"
+                app:layout_constraintEnd_toStartOf="@id/historyAppCompatImageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/historyAppCompatImageButton"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:tint="@android:color/black"
+                app:srcCompat="@drawable/ic_history"
+                style="?android:attr/borderlessButtonStyle"
+                android:visibility="visible"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/dateTitleTextView"
+                android:text="FECHA Y HORA"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleNameTextView"/>
+
+            <TextView
+                android:id="@+id/dateValueTextView"
+                android:text="00/00/0000 - 00:00 MM"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateTitleTextView"/>
+
+            <TextView
+                android:id="@+id/placeTitleTextView"
+                android:text="LUGAR"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateValueTextView"/>
+
+            <TextView
+                android:id="@+id/placeValueTextView"
+                android:text="LOREM IPSUM"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/placeTitleTextView"/>
+
+            <TextView
+                android:id="@+id/addressTitleTextView"
+                android:text="DIRECCIÓN"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/placeValueTextView"/>
+
+            <TextView
+                android:id="@+id/addressValueTextView"
+                android:text="LOREM IPSUM"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressTitleTextView"/>
+
+            <TextView
+                android:id="@+id/doctorTitleTextView"
+                android:text="MÉDICO A CARGO"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressValueTextView"/>
+
+            <TextView
+                android:id="@+id/doctorValueTextView"
+                android:text="LOREM IPSUM"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/doctorTitleTextView"/>
+
+            <TextView
+                android:id="@+id/patientTitleTextView"
+                android:text="NOMBRE DEL PACIENTE"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/doctorValueTextView"/>
+
+            <TextView
+                android:id="@+id/patientValueTextView"
+                android:text="LOREM IPSUM"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patientTitleTextView"/>
+
+            <TextView
+                android:id="@+id/recomendationTitleTextView"
+                android:text="RECOMENDACIÓN"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patientValueTextView"/>
+
+            <TextView
+                android:id="@+id/recomendationValueTextView"
+                android:text="Llegar 10 min antes"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recomendationTitleTextView"/>
+
+            <TextView
+                android:id="@+id/seeTicketTitleTextView"
+                android:text="TICKET #"
+                android:textSize="13sp"
+                android:textColor="@color/colorSecondaryText"
+                android:maxLines="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recomendationValueTextView"/>
+
+            <TextView
+                android:id="@+id/seeTicketValueTextView"
+                android:text="Ver solicitud de referencia (Click)"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginStart="@dimen/big_big_margin"
+                android:layout_marginEnd="@dimen/big_big_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/big_big_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seeTicketTitleTextView" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/reserveCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginBottom="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/seeMoreButton">
+
+                <ProgressBar
+                    android:id="@+id/reserveProgressBar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:indeterminate="true"
+                    android:theme="@style/ProgressBarStyleWhite"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/reserveTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginTop="@dimen/big_margin"
+                    android:layout_marginBottom="@dimen/big_margin"
+                    android:text="Reprogramar cita"
+                    android:textColor="@android:color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/rejectMAMoreButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_big_big_margin"
+                android:layout_marginBottom="@dimen/big_margin"
+                android:layout_marginEnd="@dimen/big_big_big_margin"
+                android:textColor="@color/colorTertiary"
+                android:textStyle="bold"
+                android:background="@drawable/button_bordered_red"
+                android:text="Cancelar cita :("
+                android:textSize="13sp"
+                style="?android:attr/borderlessButtonStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

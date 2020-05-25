@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "211038840114",
+    "firebase_url": "https://repediatrics.firebaseio.com",
+    "project_id": "repediatrics",
+    "storage_bucket": "repediatrics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211038840114:android:170fdd06a24752a189e32b",
+        "android_client_info": {
+          "package_name": "pe.work.karique.repediatrics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211038840114-6o7nnfegpn2jch0k1b0u2pqd8la2ildu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pe.work.karique.repediatrics",
+            "certificate_hash": "af8528cf516abc14bf256f68097954e39c520221"
+          }
+        },
+        {
+          "client_id": "211038840114-qhsigsv52c01mo4psm9oljmpm1dkc4bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr2NHUG_Z21wyq11Q-9WdYksZdp7aCzMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211038840114-qhsigsv52c01mo4psm9oljmpm1dkc4bq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

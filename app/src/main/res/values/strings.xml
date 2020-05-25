@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">RePediatrics</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="login">Ingresar</string>
+    <string name="register">Registrar</string>
+    <string name="terms">Continuing, you are accepting our terms and conditions</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="password_forgotten">Password forgotten</string>
+    <string name="title_activity_parent_main">ParentMainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="my_account">Mi cuenta</string>
+    <string name="notifications">Notificaciones</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_data">Sin datos</string>
+
+    <string name="default_notification_channel_id">Notificación</string>
+    <string name="fcm_message">Notificación</string>
+</resources>
