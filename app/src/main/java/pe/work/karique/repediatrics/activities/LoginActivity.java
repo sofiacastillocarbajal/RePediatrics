@@ -141,23 +141,23 @@ public class LoginActivity extends AppCompatActivity {
             if (speciality.equals("Pediatria")){
                 Intent mainIntent = new Intent(this, DoctorMainActivity.class);
                 startActivity(mainIntent);
-                finish();
+                finishAffinity();
             }
             else if (speciality.equals("Oncologia")){
                 Intent mainIntent = new Intent(this, SpecialistMainActivity.class);
                 startActivity(mainIntent);
-                finish();
+                finishAffinity();
             }
         }
         else if (userTypeId.equals(UserType.TYPE_PARENT)) {
             Intent intent = new Intent(this, ParentMainActivity.class);
             startActivity(intent);
-            finish();
+            finishAffinity();
         }
         else if (userTypeId.equals(UserType.TYPE_ADMIN)) {
             Intent intent = new Intent(this, AdminMainActivity.class);
             startActivity(intent);
-            finish();
+            finishAffinity();
         }
     }
     private void disableLoginButton(){

@@ -111,7 +111,7 @@ public class ChooseTicketForMedicalAppointmentActivity extends AppCompatActivity
         ticketsRecyclerView.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
 
-        AndroidNetworking.get(RepediatricsApi.TICKETS_BY_PARENT(sessionManager.getid()))
+        AndroidNetworking.get(RepediatricsApi.TICKETS_BY_PARENT_FOR_CHOOSE(sessionManager.getid()))
                 .addHeaders("Content-Type", "application/json")
                 .setPriority(Priority.HIGH)
                 .setTag(getString(R.string.app_name))
@@ -153,7 +153,8 @@ public class ChooseTicketForMedicalAppointmentActivity extends AppCompatActivity
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            if (response.getString("response").equals("false")){
+                            if (response.getString("response").equals("false") ||
+                                    response.getString("response").equals("False")){
                                 chooseSpecialistForMedicalAppointment(ticket);
                             }
                             else {

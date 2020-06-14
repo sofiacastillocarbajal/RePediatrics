@@ -98,7 +98,6 @@ public class InitialActionActivity extends AppCompatActivity {
     private void startLoginActivity() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-        finish();
     }
 
     private void startChooseRegisterType(){

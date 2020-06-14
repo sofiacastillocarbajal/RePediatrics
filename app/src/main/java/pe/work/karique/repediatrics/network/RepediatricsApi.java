@@ -34,6 +34,10 @@ public class RepediatricsApi {
         return PARENTS_URL + "/" + parentId + "/" + "tickets";
     }
 
+    public static String TICKETS_BY_PARENT_FOR_CHOOSE(String parentId){
+        return PARENTS_URL + "/" + parentId + "/" + "TicketsForChoose";
+    }
+
     public static String TICKETS_BY_DOCTOR(String doctorId){
         return DOCTORS_URL + "/" + doctorId + "/" + "tickets";
     }

@@ -117,7 +117,9 @@ public class SendResetPasswordEmailActivity extends AppCompatActivity {
                                 Toast.makeText(SendResetPasswordEmailActivity.this, "Se envió un mensaje a su correo", Toast.LENGTH_LONG).show();
                                 finish();
                             }
-                            Toast.makeText(SendResetPasswordEmailActivity.this, "Error en el sistema al enviar correo", Toast.LENGTH_LONG).show();
+                            else {
+                                Toast.makeText(SendResetPasswordEmailActivity.this, "Error en el sistema al enviar correo", Toast.LENGTH_LONG).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

@@ -31,6 +31,7 @@ import org.json.JSONObject;
 
 import pe.work.karique.repediatrics.R;
 import pe.work.karique.repediatrics.activities.DoctorDetailsActivity;
+import pe.work.karique.repediatrics.activities.InitialActionActivity;
 import pe.work.karique.repediatrics.activities.LoginActivity;
 import pe.work.karique.repediatrics.network.RepediatricsApi;
 import pe.work.karique.repediatrics.session.SessionManager;
@@ -86,6 +87,7 @@ public class AccountFragment extends Fragment {
         lastNameCustomEditText.setText(sessionManager.getlastname());
         emailCustomEditText.setText(sessionManager.getemail());
     }
+
     private void showLogOutDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("¿Seguro que desea cerrar sesión?")
@@ -105,7 +107,7 @@ public class AccountFragment extends Fragment {
     }
     private void logOut(){
         sessionManager.deleteUserSession();
-        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        Intent intent = new Intent(getActivity(), InitialActionActivity.class);
         startActivity(intent);
         getActivity().finish();
     }
@@ -135,7 +137,7 @@ public class AccountFragment extends Fragment {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String newPassword = String.valueOf(taskEditText.getText());
+                        String newPassword = taskEditText.getText().toString();
                         validatePassword(newPassword);
                     }
                 })
@@ -145,7 +147,7 @@ public class AccountFragment extends Fragment {
     }
     private void validatePassword(String newPassword){
         if (passwordCustomEditText.getText().toString().length() <= 7 ||
-                !checkPassword(passwordCustomEditText.getText().toString())) {
+                !checkPassword(newPassword)) {
             Toast.makeText(getContext(), "Ingrese una contraseña valida (Mas de 7 caracteres, Una mayuscula, una minuscula y un numero)", Toast.LENGTH_LONG).show();
             return;
         }

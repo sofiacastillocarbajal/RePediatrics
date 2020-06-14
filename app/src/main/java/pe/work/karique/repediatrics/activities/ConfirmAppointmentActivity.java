@@ -115,7 +115,7 @@ public class ConfirmAppointmentActivity extends AppCompatActivity {
         fullNameTextView.setText(specialist.getFullName());
         specialityTextView.setText(specialist.getSpecialty());
         dateValueMessageTextView.setText(FuncionesFecha.formatLDateToText(FuncionesFecha.getLocalDateFromString(timeTableByDoctor.getStartDateTime())));
-        timeValueMessageTextView.setText(FuncionesFecha.formatDateToHour(FuncionesFecha.getDateFromString(timeTableByDoctor.getStartDateTime())));
+        timeValueMessageTextView.setText(FuncionesFecha.formatDateToHour(FuncionesFecha.getDateWithHourFromString(timeTableByDoctor.getStartDateTime())));
         patientValueMessageTextView.setText(ticket.getPatient().getFullName());
         dniValueMessageTextView.setText(ticket.getPatient().getDni());
         hospitalValueMessageTextView.setText(ticket.getHospital().getName());
